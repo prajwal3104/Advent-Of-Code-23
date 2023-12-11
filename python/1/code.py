@@ -15,17 +15,21 @@ def process_string(input_string):
 def main():
     total_sum = 0
 
-    input_file_path = "/Users/prajwal/Developer/Advent-Of-Code-23/python/1/input.txt"
+    input_file_path = "your_input_file.txt"
 
-    with open(input_file_path, "r") as file:
-        lines = file.readlines()
+    try:
+        with open(input_file_path, "r") as file:
+            lines = file.readlines()
 
         for line in lines:
             line = line.strip()
-            output = process_string(line)
+            output = (line)
             total_sum += output
 
         print(f"Final result: {total_sum}")
+
+    except FileNotFoundError:
+        print(f"Error: File '{input_file_path}' not found.")
 
 if __name__ == "__main__":
     main()
